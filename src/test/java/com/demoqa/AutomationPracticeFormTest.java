@@ -4,19 +4,13 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
-import static com.codeborne.selenide.Selenide.$x;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
 import static com.codeborne.selenide.Selenide.open;
 import static com.demoqa.utils.Highlighter.highlight;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
 import java.util.Random;
 
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.Keys;
 
 import com.github.javafaker.Faker;
 
@@ -36,7 +30,8 @@ public class AutomationPracticeFormTest extends BaseTest {
 
         // инициализируем java-faker
         Faker faker = new Faker();
-        Random random = new Random();
+
+        String registrationFormUrl = "/automation-practice-form";
 
         // генерация и хардкод тестовых данных
         String firstName = faker.name().firstName();
@@ -49,6 +44,7 @@ public class AutomationPracticeFormTest extends BaseTest {
 
         String phoneNumber = faker.phoneNumber().subscriberNumber(10);
 
+        // про то, как моя хитрость не взлетела – читать в README
         String date = "20";
         String month = "September";
         String year = "2022";
@@ -67,30 +63,38 @@ public class AutomationPracticeFormTest extends BaseTest {
         String state = "NCR";
         String city = "Delhi";
 
-        // открываем страницу с формой регистрации
-        open("/automation-practice-form");
+        // сам тест
+        open(registrationFormUrl);
 
         highlight(executeJavaScript("$('footer').remove()"));
         highlight(executeJavaScript("$('#fixedban').remove()"));
 
         highlight($("#firstName").setValue(firstName));
         highlight($("#lastName").setValue(lastName));
+
         highlight($("#userEmail").setValue(email));
+
         $$(".custom-radio").findBy(text(gender)).click();
+
         highlight($("#userNumber").setValue(phoneNumber));
 
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOption(month);
         $(".react-datepicker__year-select").selectOption(year);
         $(".react-datepicker__day--020").click();
+
         highlight($("#subjectsInput").setValue(subject).pressEnter());
+
         $$(".custom-control-label").findBy(text(hobby)).click();
         $("#uploadPicture").uploadFromClasspath(imagePath);
+
         highlight($("#currentAddress").setValue(address));
+
         $("#state").click();
         $(byText(state)).click();
         $("#city").click();
         $(byText(city)).click();
+
         $("#submit").click();
 
         // проверяем успех заполнения формы
