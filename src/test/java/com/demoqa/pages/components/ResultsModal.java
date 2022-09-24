@@ -27,13 +27,13 @@ public class ResultsModal {
     }
 
     /**
-     * проверк значений в модалке
+     * проверка значений в модалке
      * @param key наименование значения
      * @param value само значение
      * @return ResultsModal
      */
     public ResultsModal checkResult(String key, String value) {
-        $(".table-responsive table").$(byText(key))
+        $(".table-responsive").$(byText(key))
                 .parent().shouldHave(text(value));
         return this;
     }

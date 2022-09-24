@@ -64,8 +64,8 @@ public class AutomationPracticeFormTest extends BaseTest {
 
         // проверяем успех заполнения формы
         // todo наверное название (key) можно вынести в енам какой-нибудь
-        registrationFormPage.checkResultsTableVisible().checkTableResult("Student Name", firstName)
-                .checkTableResult("Student Email", lastName).checkTableResult("Gender", gender)
+        registrationFormPage.checkResultsTableVisible().checkTableResult("Student Name", firstName + " " + lastName)
+                .checkTableResult("Student Email", email).checkTableResult("Gender", gender)
                 .checkTableResult("Mobile", phoneNumber)
                 .checkTableResult("Date of Birth", birthDay).checkTableResult("Subjects", subject)
                 .checkTableResult("Hobbies", hobby).checkTableResult("Picture", imagePath)
