@@ -13,7 +13,7 @@ public class DataGenerator {
     /**
      * инициализация java-faker
      */
-    static Faker faker = new Faker(new Locale("ru"));
+    static Faker faker = new Faker();
 
     /**
      * генерация имени
