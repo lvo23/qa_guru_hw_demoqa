@@ -1,4 +1,4 @@
-package com.demoqa;
+package com.demoqa.tests;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
@@ -12,6 +12,7 @@ import java.util.Random;
 
 import org.junit.jupiter.api.Test;
 
+import com.demoqa.BaseTest;
 import com.github.javafaker.Faker;
 
 /**
@@ -23,13 +24,15 @@ import com.github.javafaker.Faker;
 public class AutomationPracticeFormTest extends BaseTest {
 
     /**
+     * инициализация java-faker
+     */
+    Faker faker = new Faker();
+
+    /**
      * тест на заполнение формы регистрации
      */
     @Test
     void fillRegistrationFormTest() {
-
-        // инициализируем java-faker
-        Faker faker = new Faker();
 
         String registrationFormUrl = "/automation-practice-form";
 
