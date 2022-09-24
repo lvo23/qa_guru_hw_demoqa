@@ -39,7 +39,7 @@ public class RegistrationFormPage {
      * Нужные локаторы на странице
      */
     private final SelenideElement firstNameInput = $("#firstName"), lastNameInput = $("#lastName"),
-            emailInput = $("#userEmail"), genderSelect = $("#genderWrapper"),
+            emailInput = $("#userEmail"), genderSelect = $("#genterWrapper"),
             numberInput = $("#userNumber"), birthDateInput = $("#dateOfBirthInput"),
             hobbiesInput = $("#hobbiesWrapper"), subjectsInput = $("#subjectsInput"),
             pictureUpload = $("#uploadPicture"), adressInput = $("#currentAddress"),
