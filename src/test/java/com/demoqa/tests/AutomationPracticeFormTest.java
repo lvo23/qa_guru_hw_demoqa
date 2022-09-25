@@ -59,7 +59,7 @@ public class AutomationPracticeFormTest extends BaseTest {
         registrationFormPage.openPage().setFirstName(firstName).setLastName(lastName)
                 .setEmail(email).setGender(gender).setNumber(phoneNumber)
                 .setBirthDate(date, month, year).setHobbies(hobby).setSubjects(subject)
-                .setUploadPicture(imagePath).setAddress(address).setState("NCR").setCity("Delhi")
+                .setUploadPicture(imagePath).setAddress(address).setState(state).setCity(city)
                 .setSubmit();
 
         // проверяем успех заполнения формы
