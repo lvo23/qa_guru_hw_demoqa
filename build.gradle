@@ -10,7 +10,9 @@ dependencies {
     testImplementation(
             'com.codeborne:selenide:6.7.4',
             'org.junit.jupiter:junit-jupiter:5.9.0',
-            'com.github.javafaker:javafaker:1.0.2'
+            'com.github.javafaker:javafaker:1.0.2',
+            'com.talanlabs:avatar-generator:1.1.0',
+            'com.talanlabs:avatar-generator-8bit:1.1.0'
     )
 }
 
