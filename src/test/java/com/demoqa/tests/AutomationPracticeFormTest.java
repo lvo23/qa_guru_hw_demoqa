@@ -1,13 +1,19 @@
 package com.demoqa.tests;
 
 import static com.demoqa.utils.DataGenerator.generateAddress;
+import static com.demoqa.utils.DataGenerator.generateAvatar;
+import static com.demoqa.utils.DataGenerator.generateCity;
+import static com.demoqa.utils.DataGenerator.generateDay;
 import static com.demoqa.utils.DataGenerator.generateEmail;
 import static com.demoqa.utils.DataGenerator.generateFirstName;
 import static com.demoqa.utils.DataGenerator.generateGender;
 import static com.demoqa.utils.DataGenerator.generateHobby;
 import static com.demoqa.utils.DataGenerator.generateLastName;
+import static com.demoqa.utils.DataGenerator.generateMonth;
 import static com.demoqa.utils.DataGenerator.generatePhoneNumber;
+import static com.demoqa.utils.DataGenerator.generateState;
 import static com.demoqa.utils.DataGenerator.generateSubject;
+import static com.demoqa.utils.DataGenerator.generateYear;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -44,16 +50,13 @@ public class AutomationPracticeFormTest extends BaseTest {
         String hobby = generateHobby();
         String subject = generateSubject();
         String address = generateAddress();
-
-        // про то, как моя хитрость не взлетела – читать в README
-        // оставил хардкодом то, что без генерации в самом тесте
-        String date = "20";
-        String month = "September";
-        String year = "2022";
+        String imagePath = generateAvatar();
+        String date = generateDay();
+        String month = generateMonth();
+        String year = generateYear();
         String birthDay = date + " " + month + "," + year;
-        String imagePath = "image_poo.jpg";
-        String state = "NCR";
-        String city = "Delhi";
+        String state = generateState();
+        String city = generateCity();
 
         // сам тест
         registrationFormPage.openPage().setFirstName(firstName).setLastName(lastName)
@@ -64,7 +67,8 @@ public class AutomationPracticeFormTest extends BaseTest {
 
         // проверяем успех заполнения формы
         // todo наверное название (key) можно вынести в енам какой-нибудь
-        registrationFormPage.checkResultsTableVisible().checkTableResult("Student Name", firstName + " " + lastName)
+        registrationFormPage.checkResultsTableVisible()
+                .checkTableResult("Student Name", firstName + " " + lastName)
                 .checkTableResult("Student Email", email).checkTableResult("Gender", gender)
                 .checkTableResult("Mobile", phoneNumber)
                 .checkTableResult("Date of Birth", birthDay).checkTableResult("Subjects", subject)
