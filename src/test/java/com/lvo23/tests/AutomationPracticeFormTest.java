@@ -16,6 +16,7 @@ import static com.lvo23.utils.DataGenerator.generateSubject;
 import static com.lvo23.utils.DataGenerator.generateYear;
 import static io.qameta.allure.Allure.step;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -40,6 +41,7 @@ public class AutomationPracticeFormTest extends BaseTest {
      */
     @Test
     @DisplayName("Заполнение всех полей регистрационной формы")
+    @Disabled("Неактуален")
     void fillRegistrationFormTest() {
 
         // генерим тестовые данные
