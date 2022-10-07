@@ -1,4 +1,4 @@
-package com.demoqa.pages;
+package com.lvo23.pages;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
@@ -7,8 +7,8 @@ import static com.codeborne.selenide.Selenide.executeJavaScript;
 import static com.codeborne.selenide.Selenide.open;
 
 import com.codeborne.selenide.SelenideElement;
-import com.demoqa.pages.components.CalendarComponent;
-import com.demoqa.pages.components.ResultsModal;
+import com.lvo23.pages.components.CalendarComponent;
+import com.lvo23.pages.components.ResultsModal;
 
 /**
  * @author Vlad Litvinov класс для страницы с формой регистрации

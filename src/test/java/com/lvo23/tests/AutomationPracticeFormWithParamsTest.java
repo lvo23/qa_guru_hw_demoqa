@@ -1,25 +1,25 @@
-package com.demoqa.tests;
+package com.lvo23.tests;
 
-import static com.demoqa.utils.DataGenerator.generateAddress;
-import static com.demoqa.utils.DataGenerator.generateAvatar;
-import static com.demoqa.utils.DataGenerator.generateCity;
-import static com.demoqa.utils.DataGenerator.generateDay;
-import static com.demoqa.utils.DataGenerator.generateEmail;
-import static com.demoqa.utils.DataGenerator.generateFirstName;
-import static com.demoqa.utils.DataGenerator.generateGender;
-import static com.demoqa.utils.DataGenerator.generateHobby;
-import static com.demoqa.utils.DataGenerator.generateLastName;
-import static com.demoqa.utils.DataGenerator.generateMonth;
-import static com.demoqa.utils.DataGenerator.generatePhoneNumber;
-import static com.demoqa.utils.DataGenerator.generateState;
-import static com.demoqa.utils.DataGenerator.generateSubject;
-import static com.demoqa.utils.DataGenerator.generateYear;
+import static com.lvo23.utils.DataGenerator.generateAddress;
+import static com.lvo23.utils.DataGenerator.generateAvatar;
+import static com.lvo23.utils.DataGenerator.generateCity;
+import static com.lvo23.utils.DataGenerator.generateDay;
+import static com.lvo23.utils.DataGenerator.generateEmail;
+import static com.lvo23.utils.DataGenerator.generateFirstName;
+import static com.lvo23.utils.DataGenerator.generateGender;
+import static com.lvo23.utils.DataGenerator.generateHobby;
+import static com.lvo23.utils.DataGenerator.generateLastName;
+import static com.lvo23.utils.DataGenerator.generateMonth;
+import static com.lvo23.utils.DataGenerator.generatePhoneNumber;
+import static com.lvo23.utils.DataGenerator.generateState;
+import static com.lvo23.utils.DataGenerator.generateSubject;
+import static com.lvo23.utils.DataGenerator.generateYear;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import com.demoqa.BaseTest;
-import com.demoqa.pages.RegistrationFormPage;
+import com.lvo23.BaseTest;
+import com.lvo23.pages.RegistrationFormPage;
 
 /**
  * @author Vlad Litvinov

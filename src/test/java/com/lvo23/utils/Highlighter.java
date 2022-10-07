@@ -1,4 +1,4 @@
-package com.demoqa.utils;
+package com.lvo23.utils;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

@@ -1,4 +1,4 @@
-package com.demoqa;
+package com.lvo23;
 
 import org.junit.jupiter.api.BeforeAll;
 
