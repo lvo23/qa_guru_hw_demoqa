@@ -14,6 +14,7 @@ import static com.lvo23.utils.DataGenerator.generatePhoneNumber;
 import static com.lvo23.utils.DataGenerator.generateState;
 import static com.lvo23.utils.DataGenerator.generateSubject;
 import static com.lvo23.utils.DataGenerator.generateYear;
+import static io.qameta.allure.Allure.step;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -24,8 +25,8 @@ import com.lvo23.pages.RegistrationFormPage;
 /**
  * @author Vlad Litvinov
  *
- *         класс для тестов <a href="https://demoqa.com/automation-practice-form">формы
- *         регистрации с использованием параметризации Junit</a>
+ *         класс для тестов <a href="https://demoqa.com/automation-practice-form">формы регистрации
+ *         с использованием параметризации Junit</a>
  */
 public class AutomationPracticeFormWithParamsTest extends BaseTest {
 
@@ -58,23 +59,24 @@ public class AutomationPracticeFormWithParamsTest extends BaseTest {
         String state = generateState();
         String city = generateCity();
 
-        // сам тест
-        registrationFormPage.openPage().setFirstName(firstName).setLastName(lastName)
-                .setEmail(email).setGender(gender).setNumber(phoneNumber)
-                .setBirthDate(date, month, year).setHobbies(hobby).setSubjects(subject)
-                .setUploadPicture(imagePath).setAddress(address).setState(state).setCity(city)
-                .setSubmit();
+        step("Заполнение формы", () -> {
+            registrationFormPage.openPage().setFirstName(firstName).setLastName(lastName)
+                    .setEmail(email).setGender(gender).setNumber(phoneNumber)
+                    .setBirthDate(date, month, year).setHobbies(hobby).setSubjects(subject)
+                    .setUploadPicture(imagePath).setAddress(address).setState(state).setCity(city)
+                    .setSubmit();
+        });
 
-        // проверяем успех заполнения формы
-        // todo наверное название (key) можно вынести в енам какой-нибудь
-        registrationFormPage.checkResultsTableVisible()
-                .checkTableResult("Student Name", firstName + " " + lastName)
-                .checkTableResult("Student Email", email).checkTableResult("Gender", gender)
-                .checkTableResult("Mobile", phoneNumber)
-                .checkTableResult("Date of Birth", birthDay).checkTableResult("Subjects", subject)
-                .checkTableResult("Hobbies", hobby).checkTableResult("Picture", imagePath)
-                .checkTableResult("Address", address)
-                .checkTableResult("State and City", state + " " + city);
+        step("Проверяем результат отправки формы", () -> {
+            registrationFormPage.checkResultsTableVisible()
+                    .checkTableResult("Student Name", firstName + " " + lastName)
+                    .checkTableResult("Student Email", email).checkTableResult("Gender", gender)
+                    .checkTableResult("Mobile", phoneNumber)
+                    .checkTableResult("Date of Birth", birthDay)
+                    .checkTableResult("Subjects", subject).checkTableResult("Hobbies", hobby)
+                    .checkTableResult("Picture", imagePath).checkTableResult("Address", address)
+                    .checkTableResult("State and City", state + " " + city);
+        });
     }
 
 }
