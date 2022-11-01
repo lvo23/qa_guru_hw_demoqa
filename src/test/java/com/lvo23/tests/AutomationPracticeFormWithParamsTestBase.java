@@ -16,20 +16,18 @@ import static com.lvo23.utils.DataGenerator.generateSubject;
 import static com.lvo23.utils.DataGenerator.generateYear;
 import static io.qameta.allure.Allure.step;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import com.lvo23.BaseTest;
 import com.lvo23.pages.RegistrationFormPage;
 
 /**
  * @author Vlad Litvinov
  *
- *         класс для тестов <a href="https://demoqa.com/automation-practice-form">формы
- *         регистрации</a>
+ *         класс для тестов <a href="https://demoqa.com/automation-practice-form">формы регистрации
+ *         с использованием параметризации Junit</a>
  */
-public class AutomationPracticeFormTest extends BaseTest {
+public class AutomationPracticeFormWithParamsTestBase extends TestBase {
 
     /**
      * Инициализация страницы с формой регистрации
@@ -41,10 +39,9 @@ public class AutomationPracticeFormTest extends BaseTest {
      */
     @Test
     @DisplayName("Заполнение всех полей регистрационной формы")
-    @Disabled("Неактуален")
     void fillRegistrationFormTest() {
 
-        // генерим тестовые данные
+        // данные для тестов, которые генерируются
         String firstName = generateFirstName();
         String lastName = generateLastName();
         String email = generateEmail();

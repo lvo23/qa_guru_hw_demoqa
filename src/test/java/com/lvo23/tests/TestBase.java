@@ -1,4 +1,4 @@
-package com.lvo23;
+package com.lvo23.tests;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -13,7 +13,7 @@ import io.qameta.allure.selenide.AllureSelenide;
 /**
  * @author Vlad Litvinov
  */
-public class BaseTest {
+public class TestBase {
 
     /**
      * метод сет-ап, который выполнится перед всеми тестами
