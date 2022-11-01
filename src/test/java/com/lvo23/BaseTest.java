@@ -32,7 +32,7 @@ public class BaseTest {
 
         // определеяем property – берём из командной строки или дефолт
         Configuration.browser = System.getProperty("browser", "chrome");
-        Configuration.browser = System.getProperty("browserVersion", "100");
+        Configuration.browserVersion = System.getProperty("browserVersion", "100");
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
 
         if (System.getProperty("remote") != null) {
