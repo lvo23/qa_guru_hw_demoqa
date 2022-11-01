@@ -35,8 +35,8 @@ public class BaseTest {
         Configuration.browserVersion = System.getProperty("browserVersion", "100");
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
 
-        if (System.getProperty("remote") != null) {
-            Configuration.remote = System.getProperty("remote");
+        if (System.getProperty("remoteUrl") != null) {
+            Configuration.remote = System.getProperty("remoteUrl");
         }
     }
 
