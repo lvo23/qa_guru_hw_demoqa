@@ -29,9 +29,15 @@ public class BaseTest {
 
         Configuration.browserCapabilities = capabilities;
         Configuration.baseUrl = "https://demoqa.com";
-        // Configuration.holdBrowserOpen = true;
-        Configuration.browserSize = "1920x1080";
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+
+        // определеяем property – берём из командной строки или дефолт
+        Configuration.browser = System.getProperty("browser", "chrome");
+        Configuration.browser = System.getProperty("browserVersion", "100");
+        Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
+
+        if (System.getProperty("remote") != null) {
+            Configuration.remote = System.getProperty("remote");
+        }
     }
 
     @AfterEach
