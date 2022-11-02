@@ -49,4 +49,6 @@ public class TestBase {
         AllureAttachments.addVideo();
     }
 
+//    curl -X POST -H 'Content-Type: application/json' -d '{"chat_id": "-1001694546555", "text": "Салют привет хеллоу", "disable_notification": true}' https://api.telegram.org/bot5788006772:AAHKtx-Um5mGMJ35KLfJ8NvQBS_vvWe697A/sendMessage
+//    java -DconfigFile=notifications/telegram.json -jar notifications/allure-notifications-4.2.1.jar
 }
